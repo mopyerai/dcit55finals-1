@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Booking - Available Rooms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../CSS/Rooms.css">
+  <style>
+    /* CSS Variables for consistent color scheme */
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" tabindex="0">HotelBooking</div>
+    <nav role="navigation" aria-label="Primary Navigation">
+      <a href="#" tabindex="0">Home</a>
+      <a href="#" tabindex="0">Room</a>
+      <a href="#" tabindex="0">Booking</a>
+      <a href="#" tabindex="0">About Us</a>
+    </nav>
+  </header>
+  <main class="container" role="main">
+    <section class="hero" aria-label="Hero section">
+      <h1>Find Your Perfect Room</h1>
+      <p>Explore our available rooms and pick the ideal stay for your next visit.</p>
+    </section>
+
+    <section aria-label="Available hotel rooms">
+      <div class="rooms-grid" id="rooms-grid">
+
+        <article id="room1" class="room-card" tabindex="0" aria-labelledby="room1-title" role="region">
+          <h2 class="room-title" id="room1-title">Luxury King Suite</h2>
+          <p class="room-info">1 King Bed • Ocean View • 2 Guests</p>
+           <img src = "../Image/Room-1.jpg" class ="room-image">
+          <div class="room-meta">
+            <span class="room-price">$320 / night</span>
+            <span class="availability" aria-label="Available">
+              <span class="available-dot" aria-hidden="true"></span> Available
+            </span>
+          </div>
+          <button class="book-now-btn" type="button" aria-label="Book Family Suite now">Book Now</button>
+        </article>
+
+        <article id="room2" class="room-card" tabindex="0" aria-labelledby="room2-title" role="region">
+          <h2 class="room-title" id="room2-title">Deluxe Double Room</h2>
+          <p class="room-info">2 Double Beds • City View • 4 Guests</p>
+          <img src = "../Image/Room-2.jpg" class ="room-image">
+          <div class="room-meta">
+            <span class="room-price">$200 / night</span>
+            <span class="availability" aria-label="Available">
+              <span class="available-dot" aria-hidden="true"></span> Available
+            </span>
+          </div>
+          <button class="book-now-btn" type="button" aria-label="Book Family Suite now">Book Now</button>
+        </article>
+
+        <article id="room3" class="room-card" tabindex="0" aria-labelledby="room3-title" role="region">
+          <h2 class="room-title" id="room3-title">Standard Single Room</h2>
+          <p class="room-info">1 Single Bed • Garden View • 1 Guest</p>
+           <img src = "../Image/Room-4.jpg" class ="room-image">
+          <div class="room-meta">
+            <span class="room-price">$120 / night</span>
+            <span class="availability" aria-label="Unavailable">
+              <span class="unavailable-dot" aria-hidden="true"></span> Unavailable
+            </span>
+          </div>
+          <button class="book-now-btn" type="button" aria-label="Book Family Suite now">Book Now</button>
+        </article>
+
+        <article id="room4" class="room-card" tabindex="0" aria-labelledby="room4-title" role="region">
+          <h2 class="room-title" id="room4-title">Family Suite</h2>
+          <p class="room-info">2 Queen Beds • Pool View • 5 Guests</p>
+           <img src = "../Image/Room-5.jfif" class ="room-image">
+          <div class="room-meta">
+            <span class="room-price">$280 / night</span>
+            <span class="availability" aria-label="Available">
+              <span class="available-dot" aria-hidden="true"></span> Available
+            </span>
+          </div>
+          <button class="book-now-btn" type="button" aria-label="Book Family Suite now">Book Now</button>
+        </article>
+        <center>
+        <article id="room5" class="room-card" tabindex="0" aria-labelledby="room5-title" role="region">
+          <h2 class="room-title" id="room5-title">Presidential Suite</h2>
+          <p class="room-info">3 King Beds • City & Ocean View • 6 Guests</p>
+           <img src = "../Image/Room-6.jpg" class ="room-image">
+          <div class="room-meta">
+            <span class="room-price">$680 / night</span>
+            <span class="availability" aria-label="Available">
+              <span class="available-dot" aria-hidden="true"></span> Available
+            </span>
+          </div>
+          <button class="book-now-btn" type="button" aria-label="Book Family Suite now">Book Now</button>
+        </article>
+
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 HotelEase. All rights reserved.
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,544 @@
+ /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #1f2937; /* dark slate */
+    }
+    /* Container layout */
+    .container {
+      display: flex;
+      height: 100vh;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    /* Sidebar */
+    nav.sidebar {
+      background-color: #111827; /* dark navy-gray */
+      color: white;
+      width: 220px;
+      min-width: 220px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* ensure left alignment */
+    }
+    nav.sidebar h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+      user-select: none;
+      width: 100%;
+      text-align: left;
+    }
+    nav.sidebar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      width: 100%;           /* full width for better clickable area */
+      text-align: left;      /* align text left */
+      line-height: 1.5;
+      box-sizing: border-box;
+      display: block;
+    }
+    nav.sidebar a:hover,
+    nav.sidebar a:focus {
+      background-color: #2563eb; /* blue-600 */
+      outline: none;
+    }
+    nav.sidebar a.active {
+      background-color: #3b82f6; /* blue-500 */
+      font-weight: 700;
+    }
+    /* Content area placeholder */
+    main.content {
+      flex-grow: 1;
+      padding: 48px;
+      background-color: #fff;
+      overflow-y: auto;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .container {
+        flex-direction: column;
+      }
+      nav.sidebar {
+        width: 100%;
+        min-width: unset;
+        padding: 16px 20px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      nav.sidebar h2 {
+        margin-bottom: 0;
+        display: none; /* hide title on mobile */
+      }
+      nav.sidebar a {
+        padding: 8px 12px;
+        font-size: 1rem;
+        width: auto;
+      }
+      main.content {
+        padding: 16px;
+      }
+    }
+ 
+    .admin-button {
+      background-color: #007BFF;   /* Blue background */
+      color: white;                /* White text */
+      padding: 10px 20px;          /* Spacing */
+      border: none;                /* No border */
+      border-radius: 5px;          /* Rounded corners */
+      cursor: pointer;             /* Pointer cursor on hover */
+      font-size: 16px;             /* Text size */
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      }
+
+.admin-button:hover {
+  background-color: #0056b3;   /* Darker blue on hover */
+}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .add-user-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+  
+  .back-button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 80px;
+  text-align: center;
+  color: #374151;
+  background-color: #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d1d5db;
+}
+
+.action-button {
+  padding: 6px 14px;
+  margin: 2px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.edit-button {
+  background-color: #2563eb; /* blue */
+}
+
+.edit-button:hover {
+  background-color: #1e40af; /* darker blue */
+}
+
+.delete-button {
+  background-color: #dc2626; /* red */
+}
+
+.delete-button:hover {
+  background-color: #991b1b; /* darker red */
+}
+
+.edit-user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.edit-user-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.edit-user-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.edit-user-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.euser {
+  width: fit-content; /* or a fixed width */
+  margin: 0 auto;
+}
+
+
+.add-room-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.add-room-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.add-room-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-room-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-room-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.edit-room-page .form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.edit-room-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.edit-room-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-pending-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.add-pending-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.add-pending-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-pending-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.edit-booking-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.edit-booking-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.edit-booking-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.edit-booking-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.add-active-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.add-active-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.add-active-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-active-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-active-booking-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.edit-active-booking-page .form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.edit-active-booking-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.edit-active-booking-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.status {
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.status.pending {
+  background-color: #dcdcdc;
+  color: #333;
+}
+
+.status.checked-in {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.checked-out {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.edit-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.edit-details-page .form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.edit-details-page .form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.edit-details-page .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.edit-details-page .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.edit-details-page .form-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-details-page .form-button:hover {
+  background-color: #357ABD;
+}

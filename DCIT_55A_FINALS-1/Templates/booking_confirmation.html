@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking Confirmation - HotelEase</title>
+  <link rel="stylesheet" href="../CSS/booking-confirmation.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" tabindex="0">HotelEase</div>
+        <div class="nav-links">
+          <a href="#" tabindex="0">Home</a>
+          <a href="#" tabindex="0">Rooms</a>
+          <a href="#" tabindex="0">Amenities</a>
+          <a href="#" tabindex="0">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 id="confirmation-title">Booking Confirmation</h1>
+      <p>Thank you for booking with HotelEase. Below are your booking details.</p>
+    </section>
+
+    <section class="confirmation-card">
+      <h2>Booking Details</h2>
+      <dl class="booking-info">
+        <dt>Room Type:</dt>
+        <dd id="roomType">—</dd>
+
+        <dt>Check-in Date:</dt>
+        <dd id="checkInDate">—</dd>
+
+        <dt>Check-out Date:</dt>
+        <dd id="checkOutDate">—</dd>
+
+        <dt>Number of Guests:</dt>
+        <dd id="guestsCount">—</dd>
+
+        <dt>Total Price:</dt>
+        <dd id="totalPrice">—</dd>
+
+        <dt>Confirmation Code:</dt>
+        <dd id="confirmationCode">—</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 BonVerNel Hotel. All rights reserved.
+  </footer>
+
+  <script>
+    (function(){
+      function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      const roomTypeParam = getQueryParam('roomType');
+      const guestsParam = getQueryParam('guests');
+      const checkInDateParam = getQueryParam('checkin');
+      const checkOutDateParam = getQueryParam('checkout');
+      const totalPriceParam = getQueryParam('price');
+      const confirmationCodeParam = getQueryParam('code');
+
+      if (roomTypeParam && guestsParam && checkInDateParam && checkOutDateParam && totalPriceParam && confirmationCodeParam) {
+        const roomType = (roomTypeParam.charAt(0).toUpperCase() + roomTypeParam.slice(1).toLowerCase()) + ' Room';
+        const guests = parseInt(guestsParam, 10);
+        const checkInDate = new Date(checkInDateParam);
+        const checkOutDate = new Date(checkOutDateParam);
+
+        document.getElementById('roomType').textContent = roomType;
+        document.getElementById('checkInDate').textContent = checkInDate.toLocaleDateString();
+        document.getElementById('checkOutDate').textContent = checkOutDate.toLocaleDateString();
+        document.getElementById('guestsCount').textContent = guests;
+        document.getElementById('totalPrice').textContent = '₱' + parseFloat(totalPriceParam).toFixed(2);
+        document.getElementById('confirmationCode').textContent = confirmationCodeParam;
+      } else {
+        document.querySelector('.confirmation-card').innerHTML = '<h2>Booking information missing</h2><p>Please return to the <a href="booking_page.php">booking page</a> to make a reservation.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>

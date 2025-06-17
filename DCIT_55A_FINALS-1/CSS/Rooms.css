@@ -1,0 +1,295 @@
+
+    :root {
+      --color-bg: #ffffff;
+      --color-text-primary: #111827;
+      --color-text-secondary: #6b7280;
+      --color-card-bg: #f9fafb;
+      --color-card-shadow: rgba(0,0,0,0.05);
+      --color-accent: #2563eb;
+      --color-accent-hover: #1e40af;
+      --color-available: #10b981;
+      --color-unavailable: #ef4444;
+    }
+
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-padding-top: 72px;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-accent-hover);
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--color-bg);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px var(--color-card-shadow);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      user-select: none;
+      letter-spacing: 0.05em;
+      outline-offset: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+      outline: none;
+    }
+        /* Book Now Button */
+    .book-now-btn {
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.75rem 1.75rem;
+        border: none;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        transition: background-color 0.3s ease;
+        align-self: flex-start;
+        user-select: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        width: 100%;
+        
+    }
+
+        .book-now-btn:hover,
+        .book-now-btn:focus {
+        background-color: #333333;
+        outline: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      color: var(--color-text-primary);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 520px;
+      font-weight: 500;
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    /* Rooms Grid Custom Layout */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: 2rem;
+      grid-template-areas: 
+        "room1 room2"
+        "room3 room4"
+        "room5 room5";
+      padding-bottom: 4rem;
+    }
+
+    /* Individual room placement */
+    #room1 {
+      grid-area: room1;
+    }
+    #room2 {
+      grid-area: room2;
+    }
+    #room3 {
+      grid-area: room3;
+    }
+    #room4 {
+      grid-area: room4;
+    }
+    #room5 {
+      grid-area: room5;
+    }
+    /* Images ng room */
+    .room-image {
+        width: 100%;
+        height: 200px;
+    
+    }
+    /* Room Card */
+    .room-card {
+      background-color: var(--color-card-bg);
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px var(--color-card-shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .room-card:hover,
+    .room-card:focus-within {
+      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.2);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .room-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+
+    .room-info {
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .room-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text-primary);
+    }
+
+    .room-price {
+      padding-top: 10px;  
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+
+    .availability {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      gap: 0.5rem;
+    }
+
+    .available-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: var(--color-available);
+      border-radius: 50%;
+    }
+
+    .unavailable-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: var(--color-unavailable);
+      border-radius: 50%;
+    }
+
+    /* Footer Placeholder */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .rooms-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "room1"
+          "room2"
+          "room3"
+          "room4"
+          "room5";
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+    }
